@@ -1,13 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
-        <UserSecretsId>aspnet-TaskManagement.Identity-20C5EA7A-6101-48B7-8485-40D6B1214A3E</UserSecretsId>
-        <WebProject_DirectoryAccessLevelKey>0</WebProject_DirectoryAccessLevelKey>
     </PropertyGroup>
-
-    <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.AzureAD.UI" Version="3.1.7"/>
-    </ItemGroup>
 
 </Project>
