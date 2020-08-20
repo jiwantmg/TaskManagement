@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using TaskManagement.Application.Interfaces;
 using TaskManagement.Domain.Entity;
 
@@ -13,7 +14,7 @@ namespace TaskManagement.Persistence
             :base(options)
         {
         }
-
+        
         public DbSet<LTask> Tasks { get; set; }
     }
 }

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TaskManagement.Persistence.MySQL;
@@ -14,7 +15,7 @@ namespace TaskManagement.Api
             var persistenceConfig = config?.GetSection("Persistence")?.Get<PersistenceConfiguration>();
             if (persistenceConfig?.Provider == "MySQL")
             {
-                serviceCollection.AddMySqlDbContext(config);
+                serviceCollection.AddMySqlDbContext();
             }
 
             return serviceCollection;

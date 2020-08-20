@@ -7,5 +7,11 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/taskmanagement</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="taskmanagement_abc@localhost" uuid="b9b781dc-98b2-45f4-a782-c4645f21397e">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/taskmanagement_abc</jdbc-url>
+    </data-source>
   </component>
 </project>

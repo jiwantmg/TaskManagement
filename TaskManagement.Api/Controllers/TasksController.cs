@@ -1,5 +1,7 @@
+using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Finbuckle.MultiTenant;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using TaskManagement.Application.Task;
@@ -30,6 +32,7 @@ namespace TaskManagement.Api.Controllers
         [HttpGet]
         public async Task<TaskListViewModel> Get(CancellationToken cancellationToken)
         {
+            Console.WriteLine(HttpContext.GetMultiTenantContext()?.TenantInfo.ConnectionString);
             return await _mediator.Send(new GetAllTasksQuery(), cancellationToken);
         }
 

@@ -60,7 +60,12 @@ namespace TaskManagement.Api
             services.AddScoped<ITaskManagementDbContext>(s => s.GetService<TaskManagementDbContext>());
             services.AddScoped<IJwtProvider, JwtProvider>();
             services.AddMediatR(typeof(SignUpCommand).Assembly);
-            
+            services.AddHttpContextAccessor();
+            // Add Tenant Information
+            services.AddMultiTenant()
+                .WithHostStrategy()
+                .WithConfigurationStore();
+
             // Add Validator
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
             services.AddValidatorsFromAssembly(typeof(SignUpCommand).Assembly);
@@ -87,6 +92,8 @@ namespace TaskManagement.Api
                     .AllowCredentials()
             );
             app.UseRouting();
+            //use multi tenant middleware
+            app.UseMultiTenant();
 
             app.UseAuthentication();
             // app.UseIdentityServer();
